@@ -34,7 +34,7 @@ height = get_positive_number("Enter the wall height in feet: ")
 area = calculate_area(width, height)
 print(f"Wall area: {area} square feet")
 
-coverage = 350
+coverage = get_positive_number("Paint coverage in square feet per gallon: ")
 
 coats = get_positive_integer("How many coats of paint? ")
 

@@ -17,4 +17,4 @@ run `python main.py` from the project folder
 ## Assumptions
 
 - Measurements are in feet
-- Coverage is fixed at 350 square feet per gallon per coat
+- Coverage is entered by the user in square feet per gallon per coat.
