@@ -28,15 +28,24 @@ def get_positive_integer(prompt):
         except ValueError:
             print("Please enter a valid whole number.")
 
-width = get_positive_number("Enter the wall width in feet: ")
-height = get_positive_number("Enter the wall height in feet: ")
+while True:
+    width = get_positive_number("Enter the wall width in feet: ")
+    height = get_positive_number("Enter the wall height in feet: ")
 
-area = calculate_area(width, height)
-print(f"Wall area: {area} square feet")
+    area = calculate_area(width, height)
+    print(f"Wall area: {area} square feet")
 
-coverage = get_positive_number("Paint coverage in square feet per gallon: ")
+    coverage = get_positive_number(
+        "Paint coverage in square feet per gallon: "
+    )
+    coats = get_positive_integer("How many coats of paint? ")
 
-coats = get_positive_integer("How many coats of paint? ")
+    gallons_needed = calculate_paint(area, coats, coverage)
+    print(f"Paint needed for {coats} coats: {gallons_needed:.2f} gallons")
 
-gallons_needed = calculate_paint(area, coats, coverage)
-print(f"Paint needed for {coats} coats: {gallons_needed:.2f} gallons")
+    again = input(
+        "Type y for another estimate, or press Enter to finish: "
+    ).strip().lower()
+
+    if again != "y":
+        break

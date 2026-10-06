@@ -7,6 +7,9 @@ A Python terminal program designed to assist in calculation of wall area and how
 - Calculates Wall area
 - Calculates gallons of paint needed per coat
 - Checks user input
+- Retries invalid input without restarting the program
+- Accepts custom paint coverage
+- Offers another estimate after displaying each result
 
 ## How to Run
 
