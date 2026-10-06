@@ -1,26 +1,25 @@
-while True:
-    try:
-        width = float(input("Enter the width of the wall in feet: "))
+def calculate_area(width,height):
+    return width * height
 
-        if width <= 0:
-            print("Width must be greater than zero.")
-        else:
-            break
-    except ValueError:
-        print("Please enter a valid number for the width.")
+def calculate_paint(area,coats,coverage):
+    return area * coats / coverage
 
-while True:
-    try:
-        height = float(input("Enter the height of the wall in feet: "))
+def get_positive_number(prompt):
+    while True:
+        try:
+            number = float(input(prompt))
 
-        if height <= 0:
-            print("Height must be greater than zero.")
-        else:
-            break
-    except ValueError:
-        print("Please enter a valid number for the height.")
+            if number <= 0:
+                print("Please enter a number greater than zero.")
+            else:
+                return number
+        except ValueError:
+            print("Please enter a valid number.")
 
-area = width * height
+width = get_positive_number("Enter the wall width in feet: ")
+height = get_positive_number("Enter the wall height in feet: ")
+
+area = calculate_area(width, height)
 print(f"Wall area: {area} square feet")
 
 coverage = 350
@@ -36,5 +35,5 @@ while True:
     except ValueError:
         print("Please enter a whole number for coats.")
 
-gallons_needed = area * coats / coverage
+gallons_needed = calculate_paint(area, coats, coverage)
 print(f"Paint needed for {coats} coats: {gallons_needed:.2f} gallons")
